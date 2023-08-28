@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        :root{
+  --background-dark: #2d3548;
+  --text-light: rgba(255,255,255,0.6);
+  --text-lighter: rgba(255,255,255,0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 1200px;
+}
+
+*{
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+body{
+  height: 100%;
+}
+
+.hero-section{
+  align-items: flex-start;
+  background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+}
+
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 100%;
+}
+
+@media(min-width: 540px){
+  .card-grid{
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media(min-width: 960px){
+  .card-grid{
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+
+.card{
+  list-style: none;
+  position: relative;
+}
+
+.card:before{
+  content: '';
+  display: block;
+  padding-bottom: 150%;
+  width: 100%;
+}
+
+.card__background{
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--spacing-l);
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  trsnsform: scale(1) translateZ(0);
+  transition: 
+    filter 200ms linear,
+    transform 200ms linear;
+}
+
+.card:hover .card__background{
+  transform: scale(1.05) translateZ(0);
+}
+
+.card-grid:hover > .card:not(:hover) .card__background{
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.card__content{
+  left: 0;
+  padding: var(--spacing-l);
+  position: absolute;
+  top: 0;
+}
+
+.card__category{
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-s);
+  text-transform: uppercase;
+}
+
+.card__heading{
+  color: var(--text-lighter);
+  font-size: 1.9rem;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+  line-height: 1.4;
+  word-spacing: 100vw;
+}
+
+/* Navigation bar ( big screen) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&family=Roboto&display=swap");
+
+:root {
+  --main-color: #0a8f81;
+  --white-text: white;
+  --hero-top: rgba(249, 212, 195, 0.7);
+  --hero-middle: rgba(194, 250, 243, 0.7);
+  --hero-bottom: rgba(10, 143, 130, 0.68);
+  --shadow: 0px 2px 20px 0px gray;
+  --font: Roboto, sans-serif;
+  --button: rgba(16, 71, 65, 0.23);
+  --line: #a00080;
+  --animation: rgba(10, 143, 130, 0.8);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: poppins;
+}
+
+.site-page {
+  width: 100%;
+  height: 100%;
+}
+
+/* Navigation bar ( big screen) */
+#header {
+  width: 100%;
+  height: 60px;
+  padding: 0rem 2rem;
+  background-color: var(--background-dark);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white-text);
+  padding: 0rem 2rem;
+  font-family: Roboto, sans-serif;
+  box-shadow: var(--shadow);
+  z-index: 100;
+}
+
+#header #nav-bar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+}
+
+#header #nav-bar ul li a {
+  color: inherit;
+  margin-right: 3rem;
+  font-family: Roboto;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+#header-img {
+  padding-top: 0.5rem;
+  height: 65px;
+  width:80px;
+}
+/* Hero background design */
+.hero-bg {
+  width: 100%;
+  height: 120vh;
+  position: relative;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--hero-bottom);
+}
+
+.bg-1 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  transform: skewY(-20deg);
+  transform-origin: top left;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
+  background-color: var(--hero-top);
+}
+
+.bg-2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
+  background-color: var(--hero-middle);
+  transform: skewX(-50deg);
+  transform-origin: bottom right;
+  overflow: hidden;
+}
+/* about us section */
+#about-us {
+  width: 100%;
+  height: 100vh;
+  padding: 8rem 2rem;
+  background-color: hsla(19, 82%, 87%, 0.46);
+  color: var(--line);
+  font-size: medium;
+}
+
+
+#video {
+  border-radius: 15px;
+}
+
+#about-us h2 {
+  font-family: Roboto, sans-serif;
+  font-size: 2rem;
+  padding: 2.5rem 0rem;
+}
+.about-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#about-us .about-info .p-div {
+  width: 30%;
+  height: 480px;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="site-page">
+        <!-- header section-->
+        <header id="header">
+          <!--company logo-->
+          <div>
+            
+            <img id="header-img"
+              src="logo.png"
+              width="100"
+              height="100"
+              alt="Organilux Logo"
+            />
+          </div>
+  
+          <!--navigation menu-->
+          <nav id="nav-bar">
+            <ul>
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="#collections" class="nav-link">Collections</a></li>
+              <li><a href="about.html" class="nav-link">About us</a></li>
+              <li><a href="singnup.html" class="nav-link">SignUp</a></li>
+            </ul>
+          </nav>
+          </header>
+          
+           <!--about us section-->
+           <section id="about-us">
+            <div class="about-info">
+              <div class="p-div">
+                <h2 class="about-us-header">How to Buy a perfect Lipshade </h2>
+                <p class="about-us-msg">
+                  Choosing the perfect lip shade can enhance your overall look and boost your confidence. Here are some tips to help you find the perfect lip shade for yourself:
+<ul>
+  <li>
+Know Your Undertone:
+Determine whether you have warm, cool, or neutral undertones. Warm undertones tend to look better with warmer shades like corals and oranges, while cool undertones suit cooler shades like pinks and purples. Neutral undertones can pull off a wide range of shades.
+</li>
+<li>
+Consider Your Skin Tone:
+Your skin tone plays a significant role in finding the right lip shade. Lighter skin tones might look great with nude, light pinks, and peaches. Medium skin tones can experiment with a broader range of colors, including berries and mauves. Darker skin tones can rock bold shades like deep reds and plums.
+</li>
+<li>
+Day vs. Night:
+Consider the occasion and time of day. Lighter shades are often preferred for daytime, while darker and bolder shades work well for evenings or special occasions.
+</li>
+<li>
+Lip Shape and Size:
+The natural shape and size of your lips can also influence the choice of lip shade. Darker shades tend to make lips look smaller, while lighter shades can create the illusion of fuller lips.
+</li>
+
+<li>
+Undertones of Lip Color:
+Pay attention to the undertones of the lip color. Even if a shade looks intimidatingly bright or dark, the undertones can make it more wearable.
+</li>
+<li>
+Experiment with Formulas:
+Different lip formulas, such as matte, glossy, satin, and sheer, can change how a shade looks on your lips. Experiment with different formulas to find what you like best.
+
+
+         </ul>       </p>
+              </div>
+    
+              <iframe
+                id="video"
+                src="https://www.youtube.com/embed/StJF4467TPA"
+                width="640"
+                height="480"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </section>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    
+<section class="hero-section">
+    
+  <div class="card-grid">
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(https://i.pinimg.com/736x/bc/a1/d3/bca1d34667dd3f47a169298393c477cf.jpg)"></div>
+      <div class="card__content">
+        <p class="card__category">Lipsticks</p>
+        <h3 class="card__heading">Buy the best </h3>
+        <h3 class="card__heading">$50 </h3>
+        
+      </div>
+    </a>
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(https://i.pinimg.com/736x/15/93/6b/15936b9407a02bee3334e2029d8cd57b.jpg)"></div>
+      <div class="card__content">
+        <p class="card__category">Lipsticks</p>
+        <h3 class="card__heading">Dior at discounted price </h3>
+      </div>
+    </a>
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(https://i.pinimg.com/736x/4d/d5/21/4dd521cec74fee13bbe28f35e73003f2.jpg)"></div>
+      <div class="card__content">
+        <p class="card__category">Lipsticks</p>
+        <h3 class="card__heading">Peach Soft blush <br> $20</h3>
+      </div>
+    </li>
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(https://i.pinimg.com/564x/54/3e/2a/543e2ab0d0df02f24ec311a8227647e3.jpg)"></div>
+      <div class="card__content">
+        <p class="card__category">Lipsticks</p>
+        <h3 class="card__heading">Fenty beauty</h3>
+      </div>
+    </a>
+    <a class="card" href="#">
+        <div class="card__background" style="background-image: url(https://i.pinimg.com/564x/53/e4/46/53e4461be8957edade3c28d5079d54e1.jpg)"></div>
+        <div class="card__content">
+          <p class="card__category">Lipsticks</p>
+          <h3 class="card__heading">Matte Lips </h3>
+        </div>
+      </a>
+      <a class="card" href="#">
+        <div class="card__background" style="background-image: url(https://i.pinimg.com/564x/6c/67/3c/6c673c08441920a7b1974d69147a35ec.jpg)"></div>
+        <div class="card__content">
+          <p class="card__category">Lipsticks </p>
+          <h3 class="card__heading">Fenty beauty Concelar</h3>
+        </div>
+      </a>
+      <a class="card" href="#">
+        <div class="card__background" style="background-image: url(https://i.pinimg.com/736x/99/cd/4a/99cd4aca7dd3e1c597a2c3654e9d2962.jpg)"></div>
+        <div class="card__content">
+          <p class="card__category">Lipsticks</p>
+          <h3 class="card__heading">Hour Glass Highlighters</h3>
+        </div>
+      </a>
+      <a class="card" href="#">
+        <div class="card__background" style="background-image: url(https://i.pinimg.com/736x/b4/81/b1/b481b1059e1556bfc256e7838ea9925b.jpg)"></div>
+        <div class="card__content">
+          <p class="card__category">Lipsticks</p>
+          <h3 class="card__heading">BestLips</h3>
+        </div>
+      </a>
+  <div>
+</section>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

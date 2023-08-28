@@ -1,0 +1,436 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+      <link rel="stylesheet" href="style.css">
+    <style>
+        :root{
+  --background-dark: #2d3548;
+  --text-light: rgba(255,255,255,0.6);
+  --text-lighter: rgba(255,255,255,0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 1200px;
+}
+
+*{
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+body{
+  height: 100%;
+}
+
+.hero-section{
+  align-items: flex-start;
+  background-image: linear-gradient(15deg, #0f4667 0%, #2a6973 150%);
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+}
+
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 100%;
+}
+
+@media(min-width: 540px){
+  .card-grid{
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media(min-width: 960px){
+  .card-grid{
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+
+.card{
+  list-style: none;
+  position: relative;
+}
+
+.card:before{
+  content: '';
+  display: block;
+  padding-bottom: 150%;
+  width: 100%;
+}
+
+.card__background{
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--spacing-l);
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  trsnsform: scale(1) translateZ(0);
+  transition: 
+    filter 200ms linear,
+    transform 200ms linear;
+}
+
+.card:hover .card__background{
+  transform: scale(1.05) translateZ(0);
+}
+
+.card-grid:hover > .card:not(:hover) .card__background{
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.card__content{
+  left: 0;
+  padding: var(--spacing-l);
+  position: absolute;
+  top: 0;
+}
+
+.card__category{
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-s);
+  text-transform: uppercase;
+}
+
+.card__heading{
+  color: var(--text-lighter);
+  font-size: 1.9rem;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+  line-height: 1.4;
+  word-spacing: 100vw;
+}
+
+/* Navigation bar ( big screen) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&family=Roboto&display=swap");
+
+:root {
+  --main-color: #0a8f81;
+  --white-text: white;
+  --hero-top: rgba(249, 212, 195, 0.7);
+  --hero-middle: rgba(194, 250, 243, 0.7);
+  --hero-bottom: rgba(10, 143, 130, 0.68);
+  --shadow: 0px 2px 20px 0px gray;
+  --font: Roboto, sans-serif;
+  --button: rgba(16, 71, 65, 0.23);
+  --line: #a00080;
+  --animation: rgba(10, 143, 130, 0.8);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: poppins;
+}
+
+.site-page {
+  width: 100%;
+  height: 100%;
+}
+
+/* Navigation bar ( big screen) */
+#header {
+  width: 100%;
+  height: 60px;
+  padding: 0rem 2rem;
+  background-color: var(--background-dark);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white-text);
+  padding: 0rem 2rem;
+  font-family: Roboto, sans-serif;
+  box-shadow: var(--shadow);
+  z-index: 100;
+}
+
+#header #nav-bar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+}
+
+#header #nav-bar ul li a {
+  color: inherit;
+  margin-right: 3rem;
+  font-family: Roboto;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+#header-img {
+  padding-top: 0.5rem;
+  height: 65px;
+  width:80px;
+}
+/* Hero background design */
+.hero-bg {
+  width: 100%;
+  height: 120vh;
+  position: relative;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--hero-bottom);
+}
+
+.bg-1 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  transform: skewY(-20deg);
+  transform-origin: top left;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
+  background-color: var(--hero-top);
+}
+
+.bg-2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
+  background-color: var(--hero-middle);
+  transform: skewX(-50deg);
+  transform-origin: bottom right;
+  overflow: hidden;
+}
+
+    </style>
+</head>
+<body>
+    <div class="site-page">
+        <!-- header section-->
+        <header id="header">
+          <!--company logo-->
+          <div>
+            
+            <img id="header-img"
+              src="logo.png"
+              width="100"
+              height="100"
+              alt="Organilux Logo"
+            />
+          </div>
+  
+          <!--navigation menu-->
+          <nav id="nav-bar">
+            <ul>
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="#collections" class="nav-link">Collections</a></li>
+              <li><a href="about.html" class="nav-link">About us</a></li>
+              <li><a href="singnup.html" class="nav-link">SignUp</a></li>
+            </ul>
+          </nav>
+          </header>
+          
+          <br><br><br>
+          
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+ 
+    <div class="signature">
+      
+  </div>
+  <h1>Luxury Brands</h1>
+    <div class="box-area">
+      <div class="box active">
+          <img src="https://i.pinimg.com/736x/a1/7a/57/a17a57cd4be9d7b21fb39bbf0db90967.jpg" alt="img">
+          <i class="fa-solid fa-makeup-brush"></i>
+          <h2>Luxury Makeup Brand 1</h2>
+          <p>
+              Discover exquisite makeup products that redefine beauty.
+          </p>
+      </div>
+      
+      <div class="box">
+          <img src="https://i.pinimg.com/564x/4e/1f/0c/4e1f0cd7bb96018cfb57360735d4884a.jpg" alt="img">
+          <i class="fa-solid fa-makeup-brush"></i>
+          <h2>Luxury Makeup Brand 2</h2>
+          <p>
+              Elevate your makeup routine with our premium cosmetics.
+          </p>
+      </div>
+      <div class="box">
+        <img src="https://i.pinimg.com/564x/5c/db/61/5cdb61fc48fb6435e7168885532a0df1.jpg" alt="img">
+        <i class="fa-solid fa-makeup-brush"></i>
+        <h2>Luxury Makeup Brand 2</h2>
+        <p>
+            Elevate your makeup routine with our premium cosmetics.
+        </p>
+    </div>
+    <div class="box">
+      <img src="https://i.pinimg.com/564x/29/40/ee/2940ee5dec1b6dd630f5077a5dd4df8b.jpg" alt="img">
+      <i class="fa-solid fa-makeup-brush"></i>
+      <h2>Luxury Makeup Brand 2</h2>
+      <p>
+          Elevate your makeup routine with our premium cosmetics.
+      </p>
+  </div>
+  <div class="box">
+    <img src="https://i.pinimg.com/564x/0c/49/cf/0c49cf7a0317d1ef582a6343ea7df815.jpg" alt="img">
+    <i class="fa-solid fa-makeup-brush"></i>
+    <h2>Luxury Makeup Brand 2</h2>
+    <p>
+        Elevate your makeup routine with our premium cosmetics.
+    </p>
+</div>
+      <div class="box">
+          <img src="https://i.pinimg.com/564x/71/76/e8/7176e8cba567fdbb0f690932bf1b5561.jpg" alt="img">
+          <i class="fa-solid fa-makeup-brush"></i>
+          <h2>Luxury Makeup Brand 3</h2>
+          <p>
+              Experience the artistry of makeup like never before.
+          </p>
+      </div>
+  </div>
+  
+  
+     
+  
+      
+    
+<section class="hero-section">
+    
+  <div class="card-grid">
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(https://i.pinimg.com/736x/97/f5/cc/97f5ccbf2158e5315fcafa4810522ae1.jpg)"></div>
+      <div class="card__content">
+        <p class="card__category">Luxury</p>
+        <h3 class="card__heading">Buy the best </h3>
+        <h3 class="card__heading">$50 </h3>
+        
+      </div>
+    </a>
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(https://i.pinimg.com/564x/84/67/82/846782a07f4a8f585755538d253a8798.jpg)"></div>
+      <div class="card__content">
+        <p class="card__category">Luxury</p>
+        <h3 class="card__heading">Dior at discounted price </h3>
+      </div>
+    </a>
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(https://i.pinimg.com/736x/ba/a8/40/baa840224a31b88e8e79453e10d6089f.jpg)"></div>
+      <div class="card__content">
+        <p class="card__category">Luxury</p>
+        <h3 class="card__heading">Peach Soft blush <br> $20</h3>
+      </div>
+    </li>
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(https://i.pinimg.com/564x/cc/92/4b/cc924bc48c68ab065a72d8ac8dc17b98.jpg)"></div>
+      <div class="card__content">
+        <p class="card__category">Luxury</p>
+        <h3 class="card__heading">Fenty beauty</h3>
+      </div>
+    </a>
+    <a class="card" href="#">
+        <div class="card__background" style="background-image: url(https://i.pinimg.com/564x/53/e4/46/53e4461be8957edade3c28d5079d54e1.jpg)"></div>
+        <div class="card__content">
+          <p class="card__category">Luxury</p>
+          <h3 class="card__heading">Matte Lips </h3>
+        </div>
+      </a>
+      <a class="card" href="#">
+        <div class="card__background" style="background-image: url(https://i.pinimg.com/564x/85/a0/5d/85a05d0e1693623c8faadcfd1169a858.jpg)"></div>
+        <div class="card__content">
+          <p class="card__category">Luxury </p>
+          <h3 class="card__heading">Fenty beauty Concelar</h3>
+        </div>
+      </a>
+      <a class="card" href="#">
+        <div class="card__background" style="background-image: url(https://i.pinimg.com/564x/4c/ae/26/4cae26053ad5233e6be786cf4b334f49.jpg)"></div>
+        <div class="card__content">
+          <p class="card__category">Luxury</p>
+          <h3 class="card__heading">Hour Glass Highlighters</h3>
+        </div>
+      </a>
+      <a class="card" href="#">
+        <div class="card__background" style="background-image: url(https://i.pinimg.com/736x/b4/81/b1/b481b1059e1556bfc256e7838ea9925b.jpg)"></div>
+        <div class="card__content">
+          <p class="card__category">Luxury</p>
+          <h3 class="card__heading">BestLips</h3>
+        </div>
+      </a>
+  <div>
+</section>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+      <script src="script.js"></script>
+</html>

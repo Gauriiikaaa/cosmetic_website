@@ -1,0 +1,145 @@
+<!doctype html>
+<title>Example</title>
+<style>
+  :root{
+    --bg-color: #FFF5E0;
+    --second-bg-color: #FF6969;
+    --text-color: #BB2525;
+    --main-color: #141E46;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--main-color);
+  padding: 15px;
+}
+
+.navbar-left {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.navbar-right {
+  display: flex;
+}
+.navbar-right a {
+  margin-left: 20px;
+  text-decoration: none;
+  color:var(--bg-color);
+}
+body
+{
+
+ background-image: url('https://i.pinimg.com/564x/69/00/38/6900387aeb5fd489f6b3f7bce32d2995.jpg');
+  background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.grid { 
+  
+  padding: 5%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+  align-items: stretch;
+  }
+.grid > article {
+  clip-path: polygon(8% 0, 90% 0, 100% 100%, 0% 100%);
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+}
+.grid > article img {
+  max-width: 100%;
+}
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+.text {
+  padding: 0 20px 20px;
+}
+.text > button {
+  background:var(--main-color);
+  border: 0;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  }
+  .button{
+background-color: var(--main-color);
+
+  }
+
+</style>
+<body>
+   
+   <div class="navbar">
+    <div class="navbar-left"><a href="index.html">
+        GBeauty
+    </a>
+    </div>
+    <div class="navbar-right">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="#shop">Shop</a>
+        <a href="singnup.html">Sign Up</a>
+    </div>
+</div>
+<main class="grid">
+  <article>
+    <img src="https://i.pinimg.com/564x/2a/19/40/2a19402e52c150b175b3411d21c419c5.jpg" alt="Sample photo">
+    <div class="text">
+      <h3>Seamlessly visualize quality</h3>
+      <p>Collaboratively administrate empowered markets via plug-and-play networks.</p>
+      <button>Here's why</button>
+    </div>
+  </article>
+  <article>
+    <img src="https://i.pinimg.com/736x/de/51/10/de511026b9afe453a07378d75cdd2379.jpg" alt="Sample photo">
+    <div class="text">
+      <h3>Completely Synergize</h3>
+      <p>Dramatically engage seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing.</p>
+      <button>Here's how</button>
+    </div>
+  </article>
+  <article>
+    <img src="https://i.pinimg.com/564x/24/47/ab/2447ab49d462d25df632265a428cddbc.jpg" alt="Sample photo">
+    <div class="text">
+      <h3>Dynamically Procrastinate</h3>
+      <p>Completely synergize resource taxing relationships via premier niche markets.</p>
+      <button>Read more</button>
+    </div>
+  </article>
+  <article>
+    <img src="https://i.pinimg.com/564x/3a/b5/e1/3ab5e16d11fcd6a82b3c2963eed5bfeb.jpg" alt="Sample photo">
+    <div class="text">
+      <h3>Best in class</h3>
+      <p>Imagine jumping into that boat, and just letting it sail wherever the wind takes you...</p>
+      <button>Just do it...</button>
+    </div>
+  </article>
+  <article>
+    <img src="https://i.pinimg.com/736x/9c/fd/01/9cfd01500e0e5f2de27bedd4a888a58c.jpg" alt="Sample photo">
+    <div class="text">
+      <h3>Dynamically innovate supply chains</h3>
+      <p>Holisticly predominate extensible testing procedures for reliable supply chains.</p>
+      <button>Here's why</button>
+    </div>
+  </article>
+  <article>
+    <img src="https://i.pinimg.com/564x/21/b2/f2/21b2f27c219c9826eacf4c525601ce50.jpg" alt="Sample photo">
+    <div class="text">
+      <h3>Sanity check</h3>
+      <p>Objectively innovate empowered manufactured products whereas parallel platforms.</p>
+      <button>Stop here</button>
+    </div>
+  </article>
+</main>
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GBeauty Login</title>
+  
+  
+  <style>
+  :root {
+    --main-color: #0a8f81;
+    --white-text: white;
+    --hero-top: rgba(249, 212, 195, 0.7);
+    --hero-middle: rgba(194, 250, 243, 0.7);
+    --hero-bottom: rgba(10, 143, 130, 0.68);
+    --shadow: 0px 2px 20px 0px gray;
+    --font: Roboto, sans-serif;
+    --button: rgba(16, 71, 65, 0.23);
+    --line: #a00080;
+    --animation: rgba(10, 143, 130, 0.8);
+  }
+  
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: poppins;
+  }
+  
+  .site-page {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Navigation bar ( big screen) */
+  #header {
+    width: 100%;
+    height: 60px;
+    padding: 0rem 2rem;
+    background-color: var(--main-color);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--white-text);
+    padding: 0rem 2rem;
+    font-family: Roboto, sans-serif;
+    box-shadow: var(--shadow);
+    z-index: 100;
+  }
+  
+  #header #nav-bar ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+  }
+  
+  #header #nav-bar ul li a {
+    color: inherit;
+    margin-right: 3rem;
+    font-family: Roboto;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+  
+  #header-img {
+    padding-top: 0.5rem;
+  }
+  /* Hero background design */
+  .hero-bg {
+    width: 100%;
+    height: 120vh;
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+    overflow: hidden;
+    background: var(--hero-bottom);
+  }
+  
+  .bg-1 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    transform: skewY(-20deg);
+    transform-origin: top left;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    background-color: var(--hero-top);
+  }
+  
+  .bg-2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    background-color: var(--hero-middle);
+    transform: skewX(-50deg);
+    transform-origin: bottom right;
+    overflow: hidden;
+  }
+  /* Additional CSS for the login page */
+.login-container {
+  width: 300px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--main-color);
+}
+
+.login-container label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: var(--main-color);
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+  outline: none;
+  border-color: var(--main-color);
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--main-color);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-container button:hover {
+  background-color: var(--hero-bottom);
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 600px) {
+  .login-container {
+    width: 80%;
+  }
+}
+
+</style>
+  
+</head>
+<body>
+  <div class="site-page">
+    <!-- header section-->
+    <header id="header">
+      <!--company logo-->
+      <div>
+        
+        <img id="header-img"
+          src="logo.png"
+          width="100"
+          height="100"
+          alt="Organilux Logo">
+      </div>
+
+      <!--navigation menu-->
+      <nav id="nav-bar">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="#collections" class="nav-link">Collections</a></li>
+          <li><a href="about.html" class="nav-link">About us</a></li>
+          <li><a href="singnup.html" class="nav-link">SignUp</a></li>
+        </ul>
+      </nav>
+      </header>
+      
+      <br><br><br>
+</div>
+  <div class="login-container">
+    <h2>GBeauty Login</h2>
+    <form action="/login" method="post">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</body>
+</html>

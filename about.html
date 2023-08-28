@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | gbeauty</title>
+  
+    
+   <link rel="stylesheet" href="style.css">
+   <style>
+    /* Navigation bar ( big screen) */
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&family=Roboto&display=swap");
+
+:root {
+  --main-color: #0a8f81;
+  --white-text: white;
+  --hero-top: rgba(249, 212, 195, 0.7);
+  --hero-middle: rgba(194, 250, 243, 0.7);
+  --hero-bottom: rgba(10, 143, 130, 0.68);
+  --shadow: 0px 2px 20px 0px gray;
+  --font: Roboto, sans-serif;
+  --button: rgba(16, 71, 65, 0.23);
+  --line: #a00080;
+  --animation: rgba(10, 143, 130, 0.8);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: poppins;
+}
+
+.site-page {
+  width: 100%;
+  height: 100%;
+}
+
+/* Navigation bar ( big screen) */
+#header {
+  width: 100%;
+  height: 60px;
+  padding: 0rem 2rem;
+  background-color: var(--main-color);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white-text);
+  padding: 0rem 2rem;
+  font-family: Roboto, sans-serif;
+  box-shadow: var(--shadow);
+  z-index: 100;
+}
+
+#header #nav-bar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+}
+
+#header #nav-bar ul li a {
+  color: inherit;
+  margin-right: 3rem;
+  font-family: Roboto;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+#header-img {
+  padding-top: 0.5rem;
+}
+/* Hero background design */
+.hero-bg {
+  width: 100%;
+  height: 120vh;
+  position: relative;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--hero-bottom);
+}
+
+.bg-1 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  transform: skewY(-20deg);
+  transform-origin: top left;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
+  background-color: var(--hero-top);
+}
+
+.bg-2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
+  background-color: var(--hero-middle);
+  transform: skewX(-50deg);
+  transform-origin: bottom right;
+  overflow: hidden;
+}
+
+
+
+   </style>
+
+</head>
+<body>
+    
+    <div class="site-page">
+        <!-- header section-->
+        <header id="header">
+          <!--company logo-->
+          <div>
+            
+            <img id="header-img"
+              src="logo.png"
+              width="100"
+              height="100"
+              alt="Organilux Logo"
+            />
+          </div>
+  
+          <!--navigation menu-->
+          <nav id="nav-bar">
+            <ul>
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="#collections" class="nav-link">Collections</a></li>
+              <li><a href="about.html" class="nav-link">About us</a></li>
+              <li><a href="singnup.html" class="nav-link">SignUp</a></li>
+            </ul>
+          </nav>
+  
+         
+       <!--  <div class="menu-wrap">
+            <input type="checkbox" class="toggler" />
+            <div class="hamburger"><div></div></div>
+            <div class="menu">
+              <div>
+                <div>
+                  <ul>
+                    <li><a href="#hero-page">Home</a></li>
+                    <li><a href="#collections">Collections</a></li>
+                    <li><a href="#about-us">About us</a></li>
+                    <li><a href="#contact-us">SignUp</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>--> 
+          </div>
+        </header>
+
+<br><br><br>
+    <div class="container">
+        <h1>About Gbeauty</h1>
+        <p>
+            Welcome to <span>Gbeauty</span>, your ultimate destination for high-quality cosmetic products. At gbeauty, we take pride in providing a curated collection of beauty and skincare products to help you look and feel your best.
+        </p>
+        <p>
+            We believe in supporting small businesses and empowering entrepreneurs in the beauty industry. Our platform connects customers with a wide range of small beauty businesses, offering unique and artisanal products that you won't find anywhere else.
+        </p>
+
+        <h2>About the Owner - Gaurika Sawhney</h2>
+        <div class="owner-section">
+            <img class="owner-img" src="h2.jpg" alt="Gaurika Sawhney">
+            <p>
+                Hi, I'm Gaurika Sawhney, the proud founder and owner of gbeauty. With a passion for cosmetics and a vision to support small businesses, I started this venture to create a platform where both customers and entrepreneurs can thrive.
+            </p>
+            <p>
+                Having worked in the beauty industry for over a decade, I understand the value of high-quality products that enhance your natural beauty. I carefully select each product in our collection to ensure it meets the highest standards of quality and safety.
+            </p>
+        </div>
+
+        <h2>Picture Gallery</h2>
+        <div class="picture-gallery">
+            <img class="gallery-img" src="https://i.pinimg.com/564x/9e/4b/e2/9e4be2e7712b0d28bcbcfb2010979f48.jpg" alt="Gallery Image 1">
+            <img class="gallery-img" src="https://i.pinimg.com/564x/93/77/36/9377363b6f505e6492309f89f0a8b919.jpg" alt="Gallery Image 2">
+            <img class="gallery-img" src="https://i.pinimg.com/564x/ce/2c/86/ce2c86a263a49c841dcd4a1b57eadf2c.jpg" alt="Gallery Image 3">
+            <!-- Add more images here -->
+        </div>
+    </div>
+</body>
+</html>

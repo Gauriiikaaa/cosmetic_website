@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmetic Company Signup</title>
+    <link rel = "stylesheet" href="style.css">
+    <style>
+        :root {
+    --main-color: #0a8f81;
+    --white-text: white;
+    --hero-top: rgba(249, 212, 195, 0.7);
+    --hero-middle: rgba(194, 250, 243, 0.7);
+    --hero-bottom: rgba(10, 143, 130, 0.68);
+    --shadow: 0px 2px 20px 0px gray;
+    --font: Roboto, sans-serif;
+    --button: rgba(16, 71, 65, 0.23);
+    --line: #a00080;
+    --animation: rgba(10, 143, 130, 0.8);
+  }
+  
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: poppins;
+  }
+  
+  .site-page {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Navigation bar ( big screen) */
+  #header {
+    width: 100%;
+    height: 60px;
+    padding: 0rem 2rem;
+    background-color: #e1cfda;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #6457A6;
+    padding: 0rem 2rem;
+    font-family: Roboto, sans-serif;
+    box-shadow: var(--shadow);
+    z-index: 100;
+  }
+  
+  #header #nav-bar ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+  }
+  
+  #header #nav-bar ul li a {
+    color: inherit;
+    margin-right: 3rem;
+    font-family: Roboto;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+  
+  #header-img {
+    padding-top: 0.3rem;
+ height:60px;
+ 
+  
+  }
+  /* Hero background design */
+  .hero-bg {
+    width: 100%;
+    height: 169vh;
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+    overflow: hidden;
+    background: var(--hero-bottom);
+  }
+  
+  .bg-1 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    transform: skewY(-20deg);
+    transform-origin: top left;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    background-color: var(--hero-top);
+  }
+  
+  .bg-2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    background-color: var(--hero-middle);
+    transform: skewX(-50deg);
+    transform-origin: bottom right;
+    overflow: hidden;
+  }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3; /* Light shade of white */
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f6e1e8; /* Light pink */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #6457A6; /* Pastel purple */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #6457A6; /* Pastel purple */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #E1B9D2; /* Lighter pastel purple */
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #6457A6; /* Pastel purple */
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #7E72A7; /* Slightly darker pastel purple */
+        }
+
+        label.checkbox-label {
+            display: flex;
+            align-items: center;
+            color: #6457A6; /* Pastel purple */
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="site-page">
+        <!-- header section-->
+        <header id="header">
+          <!--company logo-->
+          <div>
+            
+            <img id="header-img"
+              src="logo.png"
+              width="100"
+              height="100"
+              alt="Organilux Logo"
+            />
+          </div>
+  
+          <!--navigation menu-->
+          <nav id="nav-bar">
+            <ul>
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="#collections" class="nav-link">Collections</a></li>
+              <li><a href="about.html" class="nav-link">About us</a></li>
+              <li><a href="singnup.html" class="nav-link">SignUp</a></li>
+            </ul>
+          </nav>
+  
+         
+       <!--  <div class="menu-wrap">
+            <input type="checkbox" class="toggler" />
+            <div class="hamburger"><div></div></div>
+            <div class="menu">
+              <div>
+                <div>
+                  <ul>
+                    <li><a href="#hero-page">Home</a></li>
+                    <li><a href="#collections">Collections</a></li>
+                    <li><a href="#about-us">About us</a></li>
+                    <li><a href="#contact-us">SignUp</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>--> 
+          </div>
+        </header>
+
+<br><br><br>
+    <div class="container">
+        <h2>Signup for GBeauty</h2>
+        <form>
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label class="checkbox-label">
+                <input type="checkbox" id="terms" name="terms" required>
+                I accept the <a href="#">Terms and Conditions</a>.
+            </label>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <p style="text-align: center;">If you already have an account, <a href="login.html">login</a>.</p>
+    </div>
+</body>
+</html>
