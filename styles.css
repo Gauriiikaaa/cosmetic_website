@@ -226,7 +226,7 @@
 
 .products5 {
   grid-area: bottom;
-  background-image: url(https://i.pinimg.com/564x/99/a2/b9/99a2b9b6c6f7650931dc71b72e7a3096.jpg);
+  background-image: url(https://i.pinimg.com/736x/51/8f/02/518f02a8b6c16a2d03474d177501278d.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -440,15 +440,15 @@
 }
 
 .testimony1 .testimony-image {
-  background-image: url(https://i.imgur.com/qNSsLns.jpg);
+  background-image: url("https://i.pinimg.com/564x/2a/53/22/2a532238ab48b23fbd5817428e85ddc8.jpg");
 }
 
 .testimony2 .testimony-image {
-  background-image: url(https://i.imgur.com/Sst9r7M.jpg);
+  background-image: url("https://i.pinimg.com/564x/fe/24/92/fe249209b5c46d1e867c173df6577afe.jpg");
 }
 
 .testimony3 .testimony-image {
-  background-image: url(https://i.imgur.com/8jBvMzr.jpg);
+  background-image: url("https://i.pinimg.com/736x/42/51/e0/4251e0e96092f1b5bd134c157c4b3b0d.jpg");
 }
 
 #footer {

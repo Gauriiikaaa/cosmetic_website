@@ -52,6 +52,34 @@ body{
   max-width: var(--width-container);
   width: 100%;
 }
+.add-to-cart-button {
+  background-color: var(--main-color); /* Use your main color variable */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: var(--spacing-s); /* Match the border-radius used elsewhere */
+  transition: background-color 0.3s ease; /* Add a smooth transition for hover effect */
+}
+
+.add-to-cart-button:hover {
+  background-color: var(--button); /* Use your button color variable on hover */
+  /* You can adjust other styles as needed for hover effect */
+}
+
+/* Center the button text vertically and horizontally */
+.add-to-cart-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add margin or padding as needed for spacing around the button */
+.add-to-cart-button {
+  margin: var(--spacing-s); /* Adjust margin as needed */
+}
+
 
 @media(min-width: 540px){
   .card-grid{
@@ -123,7 +151,20 @@ body{
   line-height: 1.4;
   word-spacing: 100vw;
 }
-
+.show-product {
+  background-color: var(--main-color); /* Use your main color variable */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: var(--spacing-s); /* Match the border-radius used elsewhere */
+    transition: background-color 0.3s ease; /* Add a smooth transition for hover effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: var(--spacing-s)
+}
 /* Navigation bar ( big screen) */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&family=Roboto&display=swap");
 
@@ -349,7 +390,13 @@ Different lip formulas, such as matte, glossy, satin, and sheer, can change how 
         <p class="card__category">Lipsticks</p>
         <h3 class="card__heading">Buy the best </h3>
         <h3 class="card__heading">$50 </h3>
-        
+        <div class="confirmation-dialog">
+          
+
+        <button class="add-to-cart-button">Add to Cart</button>
+        <button class="show-product">Show Product</button>
+                  <!-- <button id="proceed-button">Proceed</button> -->
+        </div>
       </div>
     </a>
     <a class="card" href="#">
@@ -357,6 +404,13 @@ Different lip formulas, such as matte, glossy, satin, and sheer, can change how 
       <div class="card__content">
         <p class="card__category">Lipsticks</p>
         <h3 class="card__heading">Dior at discounted price </h3>
+        <div class="confirmation-dialog">
+          
+
+        <button class="add-to-cart-button">Add to Cart</button>
+        <button class="show-product">Show Product</button>
+                  <!-- <button id="proceed-button">Proceed</button> -->
+        </div>
       </div>
     </a>
     <a class="card" href="#">
@@ -364,6 +418,13 @@ Different lip formulas, such as matte, glossy, satin, and sheer, can change how 
       <div class="card__content">
         <p class="card__category">Lipsticks</p>
         <h3 class="card__heading">Peach Soft blush <br> $20</h3>
+        <div class="confirmation-dialog">
+          
+
+        <button class="add-to-cart-button">Add to Cart</button>
+        <button class="show-product">Show Product</button>
+                  <!-- <button id="proceed-button">Proceed</button> -->
+        </div>
       </div>
     </li>
     <a class="card" href="#">
@@ -371,6 +432,13 @@ Different lip formulas, such as matte, glossy, satin, and sheer, can change how 
       <div class="card__content">
         <p class="card__category">Lipsticks</p>
         <h3 class="card__heading">Fenty beauty</h3>
+        <div class="confirmation-dialog">
+          
+
+        <button class="add-to-cart-button">Add to Cart</button>
+        <button class="show-product">Show Product</button>
+                  <!-- <button id="proceed-button">Proceed</button> -->
+        </div>
       </div>
     </a>
     <a class="card" href="#">
@@ -378,6 +446,13 @@ Different lip formulas, such as matte, glossy, satin, and sheer, can change how 
         <div class="card__content">
           <p class="card__category">Lipsticks</p>
           <h3 class="card__heading">Matte Lips </h3>
+          <div class="confirmation-dialog">
+            
+  
+          <button class="add-to-cart-button">Add to Cart</button>
+          <button class="show-product">Show Product</button>
+                    <!-- <button id="proceed-button">Proceed</button> -->
+          </div>
         </div>
       </a>
       <a class="card" href="#">
@@ -385,6 +460,13 @@ Different lip formulas, such as matte, glossy, satin, and sheer, can change how 
         <div class="card__content">
           <p class="card__category">Lipsticks </p>
           <h3 class="card__heading">Fenty beauty Concelar</h3>
+          <div class="confirmation-dialog">
+          
+  
+          <button class="add-to-cart-button">Add to Cart</button>
+          <button class="show-product">Show Product</button>
+                    <!-- <button id="proceed-button">Proceed</button> -->
+          </div>
         </div>
       </a>
       <a class="card" href="#">
@@ -392,6 +474,13 @@ Different lip formulas, such as matte, glossy, satin, and sheer, can change how 
         <div class="card__content">
           <p class="card__category">Lipsticks</p>
           <h3 class="card__heading">Hour Glass Highlighters</h3>
+          <div class="confirmation-dialog">
+            
+  
+          <button class="add-to-cart-button">Add to Cart</button>
+          <button class="show-product">Show Product</button>
+                    <!-- <button id="proceed-button">Proceed</button> -->
+          </div>
         </div>
       </a>
       <a class="card" href="#">
@@ -399,13 +488,24 @@ Different lip formulas, such as matte, glossy, satin, and sheer, can change how 
         <div class="card__content">
           <p class="card__category">Lipsticks</p>
           <h3 class="card__heading">BestLips</h3>
+         
+  
+          <button class="add-to-cart-button">Add to Cart</button>
+          <button class="show-product">Show Product</button>
+                    <!-- <button id="proceed-button">Proceed</button> -->
+        
         </div>
       </a>
   <div>
+
+    <div class="confirmation-dialog">
+      </div>
+      
 </section>
+
 <!-- Code injected by live-server -->
 <script>
-	// <![CDATA[  <-- For SVG support
+	//\\ <![CDATA[  <-- For SVG support
 	if ('WebSocket' in window) {
 		(function () {
 			function refreshCSS() {
@@ -439,7 +539,31 @@ Different lip formulas, such as matte, glossy, satin, and sheer, can change how 
 	else {
 		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
 	}
-	// ]]>
+
+  // Get all the "Add to Cart" buttons
+const addToCartButtons = document.querySelectorAll('.add-to-cart-button'); 
+
+// Add a click event listener to each button
+addToCartButtons.forEach(button => {
+
+  button.addEventListener('click', () => {
+
+    // Show the alert message
+    alert('Item added to cart successfully!');
+
+  });
+
+});
+const showButtons = document.querySelectorAll('.show-product');
+
+showButtons.forEach(button => {
+
+  button.addEventListener('click', e => {
+    e.preventDefault();
+    window.location.href = 'product_card1.html'; 
+  });
+
+});
 </script>
 </body>
 </html>

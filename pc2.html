@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="cat.css">
+
+    </head>
+    <style>
+      * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: #abd7af;
+}
+img {
+  max-width: 90%;
+  height: 70%
+}
+
+
+.container {
+  max-width: 75%;
+  margin: auto;
+  height: 80vh;
+  margin-top: 5%;
+  background: white;
+  box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.3);
+}
+
+.left, .right {
+  width: 50%;
+  padding: 30px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex1 {
+  display: flex;
+}
+
+.main_image {
+  width: auto;
+  height: auto;
+}
+
+.option img {
+  width: 75px;
+  height: 75px;
+  padding: 10px;
+}
+
+.right {
+  padding: 50px 100px 50px 50px;
+}
+
+h3 {
+  color: #137416;
+  margin: 20px 0 20px 0;
+  font-size: 25px;
+}
+
+h5,
+p,
+small {
+  color: #837D7C;
+}
+
+h4 {
+  color: red;
+}
+
+p {
+  margin: 20px 0 50px 0;
+  line-height: 25px;
+}
+
+h5 {
+  font-size: 15px;
+}
+
+label,
+.add span,
+.color span {
+  width: 25px;
+  height: 25px;
+  background: #000;
+  border-radius: 50%;
+  margin: 20px 10px 20px 0;
+}
+
+.color span:nth-child(2) {
+  background: #EDEDED;
+}
+
+.color span:nth-child(3) {
+  background: #D5D6D8;
+}
+
+.color span:nth-child(4) {
+  background: #EFE0DE;
+}
+
+.color span:nth-child(5) {
+  background: #AB8ED1;
+}
+
+.color span:nth-child(6) {
+  background: #F04D44;
+}
+
+.add label,
+.add span {
+  background: none;
+  border: 1px solid #8bc18d;
+  color: #8bc18d;
+  text-align: center;
+  line-height: 25px;
+}
+
+.add label {
+  padding: 10px 30px 0 20px;
+  border-radius: 50px;
+  line-height: 0;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background: #8bc18d;
+  color: white;
+  margin-top: 20%;
+  border-radius: 30px;
+}
+
+@media only screen and (max-width:768px) {
+  .container {
+    max-width: 90%;
+    margin: auto;
+    height: auto;
+  }
+
+  .left, .right {
+    width: 100%;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width:511px) {
+  .container {
+    max-width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .left, .right {
+    padding: 0;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .option {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.add-to-bag-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background: #65a87d;
+  color: white;
+  margin-top: 10%;
+  border-radius: 30px;
+  position: relative;
+  text-align: center;
+}
+
+.add-to-bag-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.add-to-bag-btn i {
+  position:absolute;
+  right: 10px; /* Adjust the icon's position as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px; /* Adjust the icon size as needed */
+  z-index: 2;
+}
+.popup {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(57, 130, 90, 0.5);
+  display: none;
+}
+
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(216, 220, 189);
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+p {
+  color: #994d00;
+}
+
+#close-popup {
+  background-color: #863636;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+    </style>
+<body>
+    <section>
+    <div class="site-page">
+        <!-- header section-->
+        <header id="header">
+          <!--company logo-->
+          <div>
+            
+            <img id="header-img"
+              src="logo.png"
+              width="100"
+              height="100"
+              alt="Organilux Logo">
+          </div>
+    
+          <!--navigation menu-->
+          <nav id="nav-bar">
+            <ul>
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="#collections" class="nav-link">Collections</a></li>
+              <li><a href="about.html" class="nav-link">About us</a></li>
+              <li><a href="singnup.html" class="nav-link">SignUp</a></li>
+            </ul>
+          </nav>
+          </header>
+          
+          <br><br><br>
+    </div>
+</section>
+<div id="summer-sale-popup" class="popup">
+    <div class="popup-content">
+      <h2>Diwali Sale!</h2> 
+      <p>Get 20% off all products - limited time only!</p>
+      <button id="close-popup">Close</button>
+    </div>
+  </div>
+<section>
+  <div class="container flex">
+    <div class="left">
+      <div class="main_image">
+        <img src="https://i.pinimg.com/564x/43/96/10/439610906abec65206806237ad40e424.jpg" class="slide">
+      </div>
+      <div class="option flex">
+        <img src="https://i.pinimg.com/564x/43/96/10/439610906abec65206806237ad40e424.jpg" onclick="img('https://i.pinimg.com/564x/43/96/10/439610906abec65206806237ad40e424.jpg')">
+        <img src="https://i.pinimg.com/564x/d5/09/ad/d509adee92ff56880507a888998b6715.jpg" onclick="img('https://i.pinimg.com/564x/d5/09/ad/d509adee92ff56880507a888998b6715.jpg')">
+        <img src="https://i.pinimg.com/564x/1c/35/5f/1c355f8a6c97d0e1e8f7d520492b4ff0.jpg" onclick="img('https://i.pinimg.com/564x/1c/35/5f/1c355f8a6c97d0e1e8f7d520492b4ff0.jpg')">
+        <img src="https://i.pinimg.com/564x/4e/f6/c0/4ef6c0e873f771840cc8ff134bf9d2ac.jpg" onclick="img('https://i.pinimg.com/564x/4e/f6/c0/4ef6c0e873f771840cc8ff134bf9d2ac.jpg')">
+        <img src="https://i.pinimg.com/564x/51/46/1d/51461dc7567d1141b7ef0b019ce13143.jpg" onclick="img('https://i.pinimg.com/736x/f9/eb/d4/f9ebd4fdc5804893f9e4668c14436412.jpg')">
+      
+      </div>
+    </div>
+    <div class="right">
+      <h3>Dior Blush</h3>
+      <h4> <small>$</small>9.99 </h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      <h5>Color-Rose Gold</h5>
+      <div class="color flex1">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <h5>Number</h5>
+      <div class="add flex1">
+        <span id="decrement">-</span>
+        <label id="count">1</label>
+        <span id="increment">+</span>
+        
+      </div>
+
+      <button class="add-to-bag-btn">
+        <span>Add to Bag</span>
+        <i class="fa fa-shopping-cart"></i>
+      </button>
+      
+    </div>
+  </div>
+</section>
+
+<script>
+  function img(anything) {
+    document.querySelector('.slide').src = anything;
+  }
+
+  function change(change) {
+    const line = document.querySelector('.home');
+    line.style.background = change;
+  }
+  
+  // Get references to the elements
+  const countLabel = document.getElementById("count");
+  const incrementButton = document.getElementById("increment");
+  const decrementButton = document.getElementById("decrement");
+
+  // Initial count value
+  let count = 1;
+
+  // Function to update the count and the label
+  function updateCount() {
+    countLabel.textContent = count;
+  }
+
+  // Event listener for the increment button
+  incrementButton.addEventListener("click", function () {
+    count++;
+    updateCount();
+  });
+
+  // Event listener for the decrement button
+  decrementButton.addEventListener("click", function () {
+    if (count > 1) {
+      count--;
+      updateCount();
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function() {
+  var popup = document.getElementById("summer-sale-popup");
+  popup.style.display = "block";
+  
+  var close = document.getElementById("close-popup");
+  close.addEventListener("click", function() {
+    popup.style.display = "none"; 
+  })
+});
+</script>
+</body>
+</html>

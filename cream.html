@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+             :root{
+  --background-dark: #2d3548;
+  --text-light: rgba(255,255,255,0.6);
+  --text-lighter: rgba(255,255,255,0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 1200px;
+}
+:root {
+  --main-color: #0a8f81;
+  --white-text: white;
+  --hero-top: rgba(249, 212, 195, 0.7);
+  --hero-middle: rgba(194, 250, 243, 0.7);
+  --hero-bottom: rgba(10, 143, 130, 0.68);
+  --shadow: 0px 2px 20px 0px gray;
+  --font: Roboto, sans-serif;
+  --button: rgba(16, 71, 65, 0.23);
+  --line: #a00080;
+  --animation: rgba(10, 143, 130, 0.8);
+}
+*{
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+body{
+  height: 100%;
+}
+
+        /* Light theme */
+body {
+  background:var(--hero-middle);
+}
+
+.box1 {
+  background: #ddd; 
+}
+
+/* Dark theme */
+body.dark {
+  background: #222;
+}
+
+body.dark .box1 {
+  background: #444;
+}
+        body {
+	background-color:var(--hero-middle);
+	margin: 20px;
+	font-family: Arial, Tahoma; 
+	font-size: 20px; 
+	color: #666666; 
+	text-align: center;	
+}
+p { color: #ffffff;  }
+
+/*-=-=-=-=-=-=-=-=-=-*/
+/* Column Grids */
+/*-=-=-=-=-=-=-=-=-= */
+.col_third.end {
+    margin-right: 0; /* Remove the margin-right to fix the overlap */
+  }
+
+  /* You can add margin or padding to the last two layers as needed */
+  .col_third {
+    margin-bottom: 20px; /* Add margin to create vertical space */
+  }
+
+  /* Additional CSS for the $50 of the cards (adjust as needed) */
+  .box2 {
+    background-color: #ff7e70;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+  }
+.col_half { width: 49%; }
+.col_third { width: 32%; }
+.col_fourth { width: 23.5%; }
+.col_fifth { width: 18.4%; }
+.col_sixth { width: 15%; }
+.col_three_fourth { width: 74.5%;}
+.col_twothird{ width: 66%;}
+.col_half,
+.col_third,
+.col_twothird,
+.col_fourth,
+.col_three_fourth,
+.col_fifth{
+	position: relative;
+	display:inline;
+	display: inline-block;
+	float: left;
+	margin-right: 2%;
+	margin-bottom: 20px;
+}
+.end { margin-right: 0 !important; }
+
+/*-=-=-=-=-=-=-=-=-=-=- */
+/* Flip Panel */
+/*-=-=-=-=-=-=-=-=-=-=- */
+
+.wrapper{ width: 980px; margin: 10px auto;  background-color: #bdd3de; hoverflow: hidden;}
+
+.panel {
+	margin: 0 auto;
+	height: 130px;  
+	position: relative;
+	-webkit-perspective: 600px;
+	-moz-perspective: 600px;
+}
+
+.panel .front,
+.panel .back {
+	text-align: center;
+}
+	
+.panel .front {
+	height: inherit;
+	position: absolute;
+	top: 0;
+	z-index: 900;
+	text-align: center;
+	-webkit-transform: rotateX(0deg) rotateY(0deg);
+	   -moz-transform: rotateX(0deg) rotateY(0deg);
+	-webkit-transform-style: preserve-3d;
+	   -moz-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+	   -moz-backface-visibility: hidden;
+	-webkit-transition: all .4s ease-in-out;
+	   -moz-transition: all .4s ease-in-out;
+		-ms-transition: all .4s ease-in-out;
+		 -o-transition: all .4s ease-in-out;
+			transition: all .4s ease-in-out;
+}
+
+.panel .back {
+	height: inherit;
+	position: absolute;
+	top: 0;
+	z-index: 1000;
+	-webkit-transform: rotateY(-180deg);
+	   -moz-transform: rotateY(-180deg);
+	-webkit-transform-style: preserve-3d;
+	   -moz-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+	   -moz-backface-visibility: hidden;
+	-webkit-transition: all .4s ease-in-out;
+	   -moz-transition: all .4s ease-in-out;
+		-ms-transition: all .4s ease-in-out;
+		 -o-transition: all .4s ease-in-out;
+			transition: all .4s ease-in-out;
+}
+.panel.flip .front {
+	z-index: 900;
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+}
+.panel.flip .back {
+	z-index: 1000;
+	-webkit-transform: rotateX(0deg) rotateY(0deg);
+	-moz-transform: rotateX(0deg) rotateY(0deg);
+}
+.box1{
+	background-color: #14bcc8;
+	width: 250px;
+	height: 250px;
+	margin: 0 auto;
+	padding: 20px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+.box2{
+	background-color: #ff7e70;
+	width: 250px;
+	height: 250px;
+	margin: 0 auto;
+	padding: 20px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+
+/* Navigation bar ( big screen) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&family=Roboto&display=swap");
+
+
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: poppins;
+}
+
+.site-page {
+  width: 100%;
+  height: 100%;
+}
+
+/* Navigation bar ( big screen) */
+
+#header {
+  
+    width: 100%;
+  height: 70px;
+  
+  background-color: var(--main-color);
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white-text);
+  padding: 3rem 1rem;
+  font-family: Roboto, sans-serif;
+  box-shadow: var(--shadow);
+  margin-left: 10px;
+  margin-right: 10%
+  
+}
+#header {
+  position: relative;
+  z-index: 999;
+}
+
+#header #nav-bar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+}
+
+#header #nav-bar ul li a {
+  color: inherit;
+  margin-right: 1rem;
+  font-family: Roboto;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+#header-img {
+  padding-top: 0.5rem;
+  height: 65px;
+  width:80px;
+}
+/* Hero background design */
+.hero-bg {
+  width: 100%;
+  height: 120vh;
+  position: relative;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--main-color);
+}
+
+.bg-1 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  transform: skewY(-20deg);
+  transform-origin: top left;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
+  background-color: var(--hero-top);
+}
+
+.bg-2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
+  background-color: var(--hero-middle);
+  transform: skewX(-50deg);
+  transform-origin: bottom right;
+  overflow: hidden;
+}
+/* about us section */
+#about-us {
+  width: 100%;
+  height: 100vh;
+  padding: 8rem 2rem;
+  background-color: hsla(19, 82%, 87%, 0.46);
+  color: var(--line);
+  font-size: medium;
+}
+
+
+#video {
+  border-radius: 15px;
+}
+
+#about-us h2 {
+  font-family: Roboto, sans-serif;
+  font-size: 2rem;
+  padding: 2.5rem 0rem;
+}
+.about-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#about-us .about-info .p-div {
+  width: 30%;
+  height: 480px;
+}
+
+/* about us section */
+#about-us {
+  width: 100%;
+  height: 100vh;
+  padding: 8rem 2rem;
+  background-color: hsla(19, 82%, 87%, 0.46);
+  color: var(--line);
+  font-size: medium;
+}
+
+
+#video {
+  border-radius: 15px;
+}
+
+#about-us h2 {
+  font-family: Roboto, sans-serif;
+  font-size: 2rem;
+  padding: 2.5rem 0rem;
+}
+.about-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#about-us .about-info .p-div {
+  width: 30%;
+  height: 480px;
+}
+
+#video {
+  border-radius: 15px;
+}
+
+#about-us p.about-us-msg {
+  /* Add your styles here for the paragraph */
+  /* For example, you can specify font-size, line-height, and other properties */
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-lighter);
+  /* Add any other styles you want */
+  overflow: hidden;
+}
+
+    /* Additional CSS for the "Add to Cart" button and cart icon */
+.box2 {
+  /* Existing styles for .box2 */
+}
+
+.cart-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.add-to-cart {
+  background-color: #0a8f81; /* Button background color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #086e5e; /* Change color on hover */
+}
+
+.fa-shopping-cart {
+  font-size: 24px; /* Adjust the icon size as needed */
+  margin-top: 10px; /* Adjust the margin as needed */
+  color: #0a8f81; /* Icon color */
+}
+ 
+
+    /* Add CSS styles for the checkbox and label */
+.theme-toggle-checkbox {
+  display: none; /* Hide the checkbox */
+}
+
+.theme-toggle-label {
+  cursor: pointer;
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.theme-toggle-checkbox:checked + .theme-toggle-label {
+  background-color: #0a8f81; /* Change color when checked */
+}
+
+/* Add a slider to indicate the theme */
+.theme-toggle-label::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: white;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle-checkbox:checked + .theme-toggle-label::before {
+  transform: translateX(20px); /* Move the slider to the right when checked */
+}
+
+        .site-page {
+  padding: 0;
+}
+.show-product {
+        background-color: #ff7e70; /* Button background color */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        margin-left: 10px; /* Add margin to separate it from the "Add to Cart" button */
+    }
+
+    .show-product:hover {
+        background-color: #ff6a5c; /* Change color on hover */
+    }
+    </style>
+    
+</head>
+<body>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <div class="site-page">
+        <!-- header section-->
+        <header id="header">
+          <!--company logo-->
+          <div>
+            
+            <img id="header-img"
+              src="logo.png"
+              width="100"
+              height="100"
+              alt="Organilux Logo"
+            />
+          </div>
+  
+          <!--navigation menu-->
+          <nav id="nav-bar">
+            <ul>
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="category.html" class="nav-link">Categories</a></li>
+              <li><a href="#collections" class="nav-link">Collections</a></li>
+              <li><a href="about.html" class="nav-link">About us</a></li>
+              <li><a href="singnup.html" class="nav-link">SignUp</a></li>
+              <li><!-- Replace the "Toggle Theme" button with a checkbox -->
+                <input type="checkbox" id="themeToggle" class="theme-toggle-checkbox">
+                <label for="themeToggle" class="theme-toggle-label"></label>
+                </li>
+            </ul>
+          </nav>
+  
+          <!--Toggle Menu for Mobile-->
+
+  </header>
+
+  
+  <section id="about-us">
+    <div class="about-info">
+      <div class="p-div">
+        <h2 class="about-us-header">How to Get perfect Skin </h2>
+        <p class="about-us-msg">
+          Choosing the perfect lip shade can enhance your overall look and boost your confidence. Here are some tips to help you find the perfect lip shade for yourself:
+<ul>
+<li>
+Know Your Undertone:
+Determine whether you have warm, cool, or neutral undertones. Warm undertones tend to look better with warmer shades like corals and oranges, while cool undertones suit cooler shades like pinks and purples. Neutral undertones can pull off a wide range of shades.
+</li>
+<li>
+Consider Your Skin Tone:
+Your skin tone plays a significant role in finding the right lip shade. Lighter skin tones might look great with nude, light pinks, and peaches. Medium skin tones can experiment with a broader range of colors, including berries and mauves. Darker skin tones can rock bold shades like deep reds and plums.
+</li>
+<li>
+Day vs. Night:
+Consider the occasion and time of day. Lighter shades are often preferred for daytime, while darker and bolder shades work well for evenings or special occasions.
+</li>
+<li>
+Lip Shape and Size:
+The natural shape and size of your lips can also influence the choice of lip shade. Darker shades tend to make lips look smaller, while lighter shades can create the illusion of fuller lips.
+</li>
+
+<li>
+Undertones of Lip Color:
+Pay attention to the undertones of the lip color. Even if a shade looks intimidatingly bright or dark, the undertones can make it more wearable.
+</li>
+<li>
+Experiment with Formulas:
+Different lip formulas, such as matte, glossy, satin, and sheer, can change how a shade looks on your lips. 
+
+
+ </ul>       </p>
+      </div>
+
+      <iframe
+        id="video"
+        src="https://www.youtube.com/embed/U3FBozxmMXE?si=5nqY6Bn7eFTA34rD"
+        width="640"
+        height="480"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </section>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+ 
+    <h1>"Elevate Your Beauty: GBeauty Creams Collection"</h1>
+<h3>"Discover the Beauty Within"</h3>
+<section>
+<div class="wrapper">
+      <div class="col_third">
+        <div class="hover panel">
+          <div class="front">
+            <div class="box1">
+              <img src="https://i.pinimg.com/564x/21/21/dc/2121dc87261936e123c105a7edec164c.jpg" style="width: 100%; height: 100%;">
+            </div>
+          </div>
+          <div class="back">
+            <div class="box2">
+                <h5>price</h5>
+             
+              <p>$50</p>
+              <div class="cart-button">
+                <button class="add-to-cart" id="addToCartBtn">Add to Cart</button>
+             <a href="pc2.html">   <a href="pc2.html">  <button class="show-product" id="showProductBtn">Show Product</button></a> </a> 
+                <span class="fa-solid fa-user"></span>
+            </div>
+              
+            </div>
+          </div>
+        </div>
+		</div>
+
+		<div class="col_third">
+        <div class="hover panel">
+          <div class="front">
+            <div class="box1">
+               <img src="https://i.pinimg.com/736x/73/b0/28/73b0282faa2950ad2b7ebcd1c0a6d8ab.jpg" style="width: 100%; height: 100%;">
+            </div>
+          </div>
+          <div class="back">
+            <div class="box2">
+              <h5>price</h5>
+              <p>$50</p>
+              <div class="cart-button">
+                <button class="add-to-cart" id="addToCartBtn2">Add to Cart</button>
+                 <a href="pc2.html">  <button class="show-product" id="showProductBtn">Show Product</button></a> 
+                <span class="fa-solid fa-user"></span>
+            </div>
+            </div>
+          </div>
+        </div>
+		</div>
+
+		<div class="col_third end">
+        <div class="hover panel">
+          <div class="front">
+            <div class="box1">
+               <img src="https://i.pinimg.com/564x/db/40/7b/db407bbf8be1d6a8f1bbd2a7979c6501.jpg" style="width: 100%; height: 100%;">
+            </div>
+          </div>
+          <div class="back">
+            <div class="box2">
+              <h5>price</h5>
+              <p>$50</p>
+              <div class="cart-button">
+                <button class="add-to-cart" id="addToCartBtn3">Add to Cart</button>
+                 <a href="pc2.html">  <button class="show-product" id="showProductBtn">Show Product</button></a> 
+                <span class="fa-solid fa-user"></span>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+	 </div>
+    </section>
+<br><br><br><br><br>
+    <section>
+        <div style="margin-top: 200px;"></div>
+        <div class="wrapper">
+              <div class="col_third">
+                <div class="hover panel">
+                  <div class="front">
+                    <div class="box1">
+                      <img src="https://i.pinimg.com/564x/15/ae/3f/15ae3f24ac2bb40d1f68936f9a272786.jpg" style="width: 100%; height: 100%;">
+                    </div>
+                  </div>
+                  <div class="back">
+                    <div class="box2">
+                      <h5>price</h5>
+              <p>$50</p>
+              <div class="cart-button">
+                <button class="add-to-cart" id="addToCartBtn">Add to Cart</button>
+                 <a href="pc2.html">  <button class="show-product" id="showProductBtn">Show Product</button></a> 
+                <span class="fa-solid fa-user"></span>
+            </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+        
+                <div class="col_third">
+                <div class="hover panel">
+                  <div class="front">
+                    <div class="box1">
+                       <img src="https://i.pinimg.com/564x/de/a8/1c/dea81c4febf76b9981592e475295ab2a.jpg" style="width: 100%; height: 100%;">
+                    </div>
+                  </div>
+                  <div class="back">
+                    <div class="box2">
+                      <h5>price</h5>
+              <p>$50</p>
+              <div class="cart-button">
+                <button class="add-to-cart" id="addToCartBtn">Add to Cart</button>
+                 <a href="pc2.html">  <button class="show-product" id="showProductBtn">Show Product</button></a> 
+                <span class="fa-solid fa-user"></span>
+            </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+        
+                <div class="col_third end">
+                <div class="hover panel">
+                  <div class="front">
+                    <div class="box1">
+                       <img src="https://i.pinimg.com/736x/84/fe/97/84fe9729245f9807ee0bf0914554aa88.jpg" style="width: 100%; height: 100%;">
+                    </div>
+                  </div>
+                  <div class="back">
+                    <div class="box2">
+                      <h5>price</h5>
+              <p>$50</p>
+              <div class="cart-button">
+                <button class="add-to-cart" id="addToCartBtn">Add to Cart</button>
+                 <a href="pc2.html">  <button class="show-product" id="showProductBtn">Show Product</button></a> 
+                <span class="fa-solid fa-user"></span>
+            </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+             </div>
+
+            </section>
+            </div>
+
+            <!-- Add this code after your existing card section -->
+            <div style="margin-top: 200px;"></div>
+          <br><br><br><br><BR>    <br><br><br><br><BR> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br>
+                <h1>Mens Collection</h1>
+<section>
+    
+    <div class="wrapper">
+      <div class="col_third">
+        <div class="hover panel">
+          <div class="front">
+            <div class="box1">
+              <img src="https://i.pinimg.com/564x/15/ae/3f/15ae3f24ac2bb40d1f68936f9a272786.jpg" style="width: 100%; height: 100%;">
+            </div>
+          </div>
+          <div class="back">
+            <div class="box2">
+              <h5>price</h5>
+              <p>$50</p>
+              <div class="cart-button">
+                <button class="add-to-cart" id="addToCartBtn">Add to Cart</button>
+                <span class="fa-solid fa-user"></span>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col_third">
+        <div class="hover panel">
+          <div class="front">
+            <div class="box1">
+              <img src="https://i.pinimg.com/564x/de/a8/1c/dea81c4febf76b9981592e475295ab2a.jpg" style="width: 100%; height: 100%;">
+            </div>
+          </div>
+          <div class="back">
+            <div class="box2">
+              <h5>price</h5>
+              <p>$50</p>
+              <div class="cart-button">
+                <button class="add-to-cart" id="addToCartBtn">Add to Cart</button>
+                <span class="fa-solid fa-user"></span>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col_third end">
+        <div class="hover panel">
+          <div class="front">
+            <div class="box1">
+              <img src="https://i.pinimg.com/736x/84/fe/97/84fe9729245f9807ee0bf0914554aa88.jpg" style="width: 100%; height: 100%;">
+            </div>
+          </div>
+          <div class="back">
+            <div class="box2">
+              <h5>price</h5>
+              <p>$50</p>
+              <div class="cart-button">
+                <button class="add-to-cart" id="addToCartBtn">Add to Cart</button>
+                <span class="fa-solid fa-user"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+            
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script>
+      $(document).ready(function(){
+          // set up hover panels
+          // although this can be done without JavaScript, we've attached these events
+          // because it causes the hover to be triggered when the element is tapped on a touch device
+          $('.hover').hover(function(){
+              $(this).addClass('flip');
+          }, function(){
+              $(this).removeClass('flip');
+          });
+  
+          // Add event listener to the "Add to Cart" button
+          const addToCartBtn = document.getElementById('addToCartBtn');
+          addToCartBtn.addEventListener('click', function() {
+              alert('Added to cart successfully!');
+          });
+  
+          const addToCartBtn1 = document.getElementById('addToCartBtn1');
+          addToCartBtn.addEventListener('click', function() {
+              alert('Added to cart successfully!');
+          });
+  
+          const toggle = document.getElementById('themeToggle');
+  
+          toggle.addEventListener('click', () => {
+              document.body.classList.toggle('dark');
+          });
+      });
+  </script>
+  
+</body>
+
+</html>

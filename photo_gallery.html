@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  perspective: clamp(400px, 100vw, 1000px);
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  height: 30vh;
+}
+
+body::before {
+  top: 0;
+  background: linear-gradient(5deg, rgba(0,0,0,0) 30%, #fff);
+}
+
+body::after {
+  bottom: 0;
+  background: linear-gradient(-5deg, #fff, rgba(0,0,0,0) 70%);
+}
+
+.gallery {
+  display: flex;
+  gap: 1vw;
+  max-width: 1200px;
+  min-width: 500px;
+  height: 100vh;
+  transform: translate(5%, -25%) rotate(-6deg) rotateX(10deg) rotateY(20deg);
+}
+
+.gallery_line {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  height: fit-content;
+  animation: slide 30s linear infinite;
+}
+
+.gallery_line:nth-child(2) {
+  animation-direction: reverse;
+}
+
+.gallery_line img {
+  flex: 1 1 auto;
+  width: 100%;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0 { transform: translatey(0); }
+  100% { transform: translatey(-50%); }
+}
+
+.Me {
+  position: fixed;
+  z-index: 15;
+  bottom: 20px;
+  left: 50%;
+  color: #111;
+  transform: translateX(-50%);
+  font-weight: 700;
+  text-align: center;
+  opacity: 0.7;
+}
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <div class="gallery_line">
+          <img src="https://i.pinimg.com/736x/02/a1/6c/02a16cc0f86e213f84ff97393650967a.jpg"/>
+          <img src="https://i.pinimg.com/564x/41/e6/83/41e683c5cde0f1788bffdb62b7f86330.jpg"/>
+          <img src="https://i.pinimg.com/564x/85/3a/8c/853a8cd185fc318d77c9a28710cf4e00.jpg"/>
+          <img src="https://i.pinimg.com/736x/ef/c2/4d/efc24d9cdb140ef8c00a78f451d56d32.jpg"/>
+          <img src="https://i.pinimg.com/564x/32/d3/bf/32d3bf9c3f0f489b376e59e294c51b8b.jpg"/>
+          <img src="https://i.pinimg.com/564x/6c/3c/f4/6c3cf4e6f7240bc754556c6f4379557f.jpg"/>
+          <!-- need to reapeat images to infinit animation -->
+          <img src="https://i.pinimg.com/564x/25/7f/c1/257fc1fee8ec4473b04cad50e42c653c.jpg"/>
+          <img src="https://i.pinimg.com/564x/ac/a0/4f/aca04f171eef54ef692d9e5c4bb62ff3.jpg"/>
+          <img src="https://i.pinimg.com/564x/f6/9d/c4/f69dc40c6354cc6f907623689261ba10.jpg"/>
+          <img src="https://i.pinimg.com/564x/15/25/ad/1525adc25b9f1323afb61e90b3bbd12f.jpg"/>
+          <img src="https://i.pinimg.com/564x/26/62/73/266273539e5922d799963d116235007c.jpg"/>
+          <img src="https://i.pinimg.com/564x/f9/c0/05/f9c0050794f58c2b46e660cd8175ee76.jpg"/>
+        </div>
+        <div class="gallery_line">
+          <img src="https://i.pinimg.com/564x/57/32/f0/5732f02a00b6da5143cc55c1fc833194.jpg"/>
+          <img src="https://i.pinimg.com/564x/28/26/b0/2826b0375abd313c8892c9843aadb6ed.jpg"/>
+          <img src="https://i.pinimg.com/564x/22/d9/a9/22d9a96a3b61fa9b20e5c7f9a3dfd717.jpg"/>
+          <img src="https://picsum.photos/300/200?random=9"/>
+          <img src="https://i.pinimg.com/564x/25/e1/41/25e141b9aa700d1003c584a9e73177c0.jpg"/>
+          <img src="https://i.pinimg.com/736x/fb/97/c1/fb97c1fe59f1df329c3f33a21a6e2deb.jpg"/>
+          <!-- need to reapeat images to infinit animation -->
+          <img src="https://i.pinimg.com/564x/57/32/f0/5732f02a00b6da5143cc55c1fc833194.jpg"/>
+          <img src="https://i.pinimg.com/564x/28/26/b0/2826b0375abd313c8892c9843aadb6ed.jpg"/>
+          <img src="https://i.pinimg.com/564x/22/d9/a9/22d9a96a3b61fa9b20e5c7f9a3dfd717.jpg"/>
+          <img src="https://i.pinimg.com/564x/e1/c5/a0/e1c5a015a6f582f72004476e68a8e960.jpg"/>
+          <img src="https://i.pinimg.com/564x/25/e1/41/25e141b9aa700d1003c584a9e73177c0.jpg"/>
+          <img src="https://i.pinimg.com/736x/fb/97/c1/fb97c1fe59f1df329c3f33a21a6e2deb.jpg"/>
+        </div>
+        <div class="gallery_line">
+          <img src="https://i.pinimg.com/564x/26/24/44/2624443bc3ae7fc4fc48c26eeb995836.jpg"/>
+          <img src="https://i.pinimg.com/564x/33/ee/d5/33eed58cb1361c74603d4ff481c3314f.jpg"/>
+          <img src="https://i.pinimg.com/564x/47/a0/cd/47a0cdcc18185bc5bb648e491f7fd724.jpg"/>
+          <img src="https://i.pinimg.com/564x/30/36/bd/3036bd5e7de90e299395d4ed7052fa8b.jpg"/>
+          <img src="https://i.pinimg.com/736x/d3/c0/73/d3c073189f9ac7eb3e3c02567343f0e7.jpg"/>
+          <img src="https://picsum.photos/300/200?random=17"/>
+          <!-- need to reapeat images to infinit animation -->
+          <img src="https://i.pinimg.com/564x/26/24/44/2624443bc3ae7fc4fc48c26eeb995836.jpg"/>
+          <img src="https://i.pinimg.com/564x/33/ee/d5/33eed58cb1361c74603d4ff481c3314f.jpg"/>
+          <img src="https://i.pinimg.com/564x/47/a0/cd/47a0cdcc18185bc5bb648e491f7fd724.jpg"/>
+          <img src="https://i.pinimg.com/564x/30/36/bd/3036bd5e7de90e299395d4ed7052fa8b.jpg"/>
+          <img src="https://i.pinimg.com/736x/d3/c0/73/d3c073189f9ac7eb3e3c02567343f0e7.jpg"/>
+          <img src="https://picsum.photos/300/200?random=17"/>
+        </div>
+      </div>
+      
+      
+</body>
+</html>

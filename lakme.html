@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+               :root{
+  --background-dark: #2d3548;
+  --text-light: rgba(255,255,255,0.6);
+  --text-lighter: rgba(255,255,255,0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 1200px;
+}
+
+#hero-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 120vh;
+  background-color: hsla(19, 82%, 87%, 0.46); /* have to make this an rgba */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--main-color);
+}
+
+.hero-image {
+  width: 30rem;
+  height: 40rem;
+  padding-top: 2rem;
+  margin-top: 5rem;
+}
+
+#hero-info {
+  width: 30rem;
+  margin-left: 15rem;
+  text-align: center;
+}
+
+#hero-page #hero-info .hero-header {
+  font-family: Roboto, sans-serif;
+  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  text-transform: uppercase;
+  background: -webkit-linear-gradient(rgb(132, 144, 245), rgb(128, 43, 43));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#hero-page #hero-info .hero-message {
+  font-family: Roboto;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#hero-page #hero-info .hero-button {
+  padding: 0.5rem 1.5rem;
+  font-family: var(--font);
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: 3px solid var(--main-color);
+  border-radius: 10px;
+  color: var(--white-text);
+  background-color: var(--button);
+  cursor: pointer; /* add a hover effect */
+  outline-color: var(--main-color);
+  transition: background-color 0.2s ease-in-out;
+}
+*{
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+body{
+  height: 100%;
+}
+
+.hero-section{
+  align-items: flex-start;
+  background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  display: flex;
+  min-height: 1000%;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+}
+
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 100%;
+}
+.add-to-cart-button {
+  background-color: var(--main-color); /* Use your main color variable */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: var(--spacing-s); /* Match the border-radius used elsewhere */
+  transition: background-color 0.3s ease; /* Add a smooth transition for hover effect */
+}
+
+.add-to-cart-button:hover {
+  background-color: var(--button); /* Use your button color variable on hover */
+  /* You can adjust other styles as needed for hover effect */
+}
+
+/* Center the button text vertically and horizontally */
+.add-to-cart-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add margin or padding as needed for spacing around the button */
+.add-to-cart-button {
+  margin: var(--spacing-s); /* Adjust margin as needed */
+}
+
+
+@media(min-width: 540px){
+  .card-grid{
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media(min-width: 960px){
+  .card-grid{
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+
+.card{
+  list-style: none;
+  position: relative;
+}
+
+.card:before{
+  content: '';
+  display: block;
+  padding-bottom: 150%;
+  width: 100%;
+}
+
+.card__background{
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--spacing-l);
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  trsnsform: scale(1) translateZ(0);
+  transition: 
+    filter 200ms linear,
+    transform 200ms linear;
+}
+
+.card:hover .card__background{
+  transform: scale(1.05) translateZ(0);
+}
+
+.card-grid:hover > .card:not(:hover) .card__background{
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.card__content{
+  left: 0;
+  padding: var(--spacing-l);
+  position: absolute;
+  top: 0;
+}
+
+.card__category{
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-s);
+  text-transform: uppercase;
+}
+
+.card__heading{
+  color: var(--text-lighter);
+  font-size: 1.9rem;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+  line-height: 1.4;
+  word-spacing: 100vw;
+}
+
+/* Navigation bar ( big screen) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&family=Roboto&display=swap");
+
+:root {
+  --main-color: #0a8f81;
+  --white-text: white;
+  --hero-top: rgba(249, 212, 195, 0.7);
+  --hero-middle: rgba(194, 250, 243, 0.7);
+  --hero-bottom: rgba(10, 143, 130, 0.68);
+  --shadow: 0px 2px 20px 0px gray;
+  --font: Roboto, sans-serif;
+  --button: rgba(16, 71, 65, 0.23);
+  --line: #a00080;
+  --animation: rgba(10, 143, 130, 0.8);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: poppins;
+}
+
+.site-page {
+  width: 100%;
+  height: 100%;
+}
+
+/* Navigation bar ( big screen) */
+#header {
+  width: 100%;
+  height: 60px;
+  padding: 0rem 2rem;
+  background-color: var(--background-dark);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white-text);
+  padding: 0rem 2rem;
+  font-family: Roboto, sans-serif;
+  box-shadow: var(--shadow);
+  z-index: 100;
+}
+
+#header #nav-bar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+}
+
+#header #nav-bar ul li a {
+  color: inherit;
+  margin-right: 3rem;
+  font-family: Roboto;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+#header-img {
+  padding-top: 0.5rem;
+  height: 65px;
+  width:80px;
+}
+/* Hero background design */
+.hero-bg {
+  width: 100%;
+  height: 120vh;
+  position: relative;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--hero-bottom);
+}
+
+.bg-1 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  transform: skewY(-20deg);
+  transform-origin: top left;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
+  background-color: var(--hero-top);
+}
+
+.bg-2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
+  background-color: var(--hero-middle);
+  transform: skewX(-50deg);
+  transform-origin: bottom right;
+  overflow: hidden;
+}
+/* about us section */
+#about-us {
+  width: 100%;
+  height: 100vh;
+  padding: 8rem 2rem;
+  background-color: hsla(19, 82%, 87%, 0.46);
+  color: var(--line);
+  font-size: medium;
+}
+
+
+#video {
+  border-radius: 15px;
+}
+
+#about-us h2 {
+  font-family: Roboto, sans-serif;
+  font-size: 2rem;
+  padding: 2.5rem 0rem;
+}
+.about-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#about-us .about-info .p-div {
+  width: 30%;
+  height: 480px;
+}
+
+  @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900');
+
+.flex-row {
+-webkit-box-orient: horizontal !important;
+-webkit-box-direction: normal !important;
+-ms-flex-direction: row !important;
+flex-direction: row !important;
+  display: flex;
+}
+
+#hero-page {
+  margin-bottom: 30px; 
+}
+.flex-row {
+  margin-top: -30px;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+}
+
+.site-page {
+  display: flex;
+  flex-direction: column; 
+}
+#hero-page, 
+.flex-row,
+#about-us {
+  margin-bottom: 30px;
+}
+
+.image-section {
+  position: relative;
+}
+
+.image-background {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 500px;
+  background-image: url('https://www.lakmeindia.com/cdn/shop/files/Hero_Banner_NO_CTA_1_x800.jpg?v=1696422327');
+  background-size:contain;
+  background-position: center;
+}
+
+.products-section {
+  position: relative;
+  padding: 40px;
+}
+
+.products {
+  display: flex;
+  justify-content: space-between;  
+}
+
+/* Product card styles */
+.product {
+  width: 30%;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+}
+.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        /* Add CSS styles for the checkbox and label */
+.theme-toggle-checkbox {
+  display: none; /* Hide the checkbox */
+}
+
+.theme-toggle-label {
+  cursor: pointer;
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.theme-toggle-checkbox:checked + .theme-toggle-label {
+  background-color: #0a8f81; /* Change color when checked */
+}
+
+/* Add a slider to indicate the theme */
+.theme-toggle-label::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: white;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle-checkbox:checked + .theme-toggle-label::before {
+  transform: translateX(20px); /* Move the slider to the right when checked */
+}
+
+    </style>
+</head>
+<body>
+    
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <div class="site-page">
+        <div style="margin-top: 100px;"></div>
+        <!-- header section-->
+        <header id="header">
+          <!--company logo-->
+          <div>
+            
+            <img id="header-img"
+              src="logo.png"
+              width="100"
+              height="100"
+              alt="Organilux Logo"
+            />
+          </div>
+  
+          <!--navigation menu-->
+          <nav id="nav-bar">
+            <ul>
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="category.html" class="nav-link">Categories</a></li>
+              <li><a href="#collections" class="nav-link">Collections</a></li>
+              <li><a href="about.html" class="nav-link">About us</a></li>
+              <li><a href="singnup.html" class="nav-link">SignUp</a></li>
+              <li>  <label for="themeToggle" class="theme-toggle-label"></label>
+                <input type="checkbox" id="themeToggle" class="theme-toggle-checkbox">
+                </li>
+            </ul>
+          </nav></header>
+          
+          <section class="image-section">
+<div style="margin-top: 400px;"></div>
+            <div class="image-background"></div>
+          
+            <div class="products-section">
+            
+              <h2>Featured Products</h2>
+              
+              <div class="products">
+                <!-- Product cards here -->
+              </div>
+          
+            </div>
+          
+          </section>
+ 
+    
+<section class="hero-section">
+    <div style="margin-top: 500px;"></div>
+    <div class="card-grid">
+      <a class="card" href="#">
+        <div class="card__background" style="background-image: url(https://i.pinimg.com/236x/f3/27/81/f32781273a9d38005a471be467518d58.jpg)"></div>
+        <div class="card__content">
+          <p class="card__category">Lipsticks</p>
+          <h3 class="card__heading">Buy the best </h3>
+          <h3 class="card__heading">$50 </h3>
+          <div class="confirmation-dialog">
+            
+  
+          <button class="add-to-cart-button">Add to Cart</button>
+                    <!-- <button id="proceed-button">Proceed</button> -->
+          </div>
+        </div>
+      </a>
+      <a class="card" href="#">
+        <div class="card__background" style="background-image: url(https://i.pinimg.com/736x/f4/41/13/f441138d7f3ffce22779841c8c3f6240.jpg)"></div>
+        <div class="card__content">
+          <p class="card__category">LAKME ABSOLUTE</p>
+          <h3 class="card__heading">Youth Infinity at discounted price </h3>
+          <div class="confirmation-dialog">
+            
+  
+          <button class="add-to-cart-button">Add to Cart</button>
+                    <!-- <button id="proceed-button">Proceed</button> -->
+          </div>
+        </div>
+      </a>
+      <a class="card" href="#">
+        <div class="card__background" style="background-image: url(https://i.pinimg.com/564x/06/fe/f1/06fef126498589b80271835c1a778da0.jpg)"></div>
+        <div class="card__content">
+          <p class="card__category">Foundation</p>
+          <h3 class="card__heading">Indian Skin tone flattering foundation <br> $20</h3>
+          <div class="confirmation-dialog">
+            
+  
+          <button class="add-to-cart-button">Add to Cart</button>
+                    <!-- <button id="proceed-button">Proceed</button> -->
+          </div>
+        </div>
+      </li>
+      <a class="card" href="#">
+        <div class="card__background" style="background-image: url(https://i.pinimg.com/736x/8b/01/59/8b0159a2d4295699614de77cd78db9bc.jpg)"></div>
+        <div class="card__content">
+          <p class="card__category">Moisturiser</p>
+          <h3 class="card__heading">Lakme Peach beauty</h3>
+          <div class="confirmation-dialog">
+            
+  
+          <button class="add-to-cart-button">Add to Cart</button>
+                    <!-- <button id="proceed-button">Proceed</button> -->
+          </div>
+        </div>
+      </a>
+      <a class="card" href="#">
+          <div class="card__background" style="background-image: url(https://i.pinimg.com/736x/2c/b7/e7/2cb7e75e195f56ca953d8de5377682db.jpg)"></div>
+          <div class="card__content">
+            <p class="card__category">FaceWash</p>
+            <h3 class="card__heading">best face wash by skin tone range </h3>
+            <div class="confirmation-dialog">
+              
+    
+            <button class="add-to-cart-button">Add to Cart</button>
+                      <!-- <button id="proceed-button">Proceed</button> -->
+            </div>
+          </div>
+        </a>
+        <a class="card" href="#">
+          <div class="card__background" style="background-image: url(https://i.pinimg.com/736x/22/86/91/228691ddd7b8c70a69c383a2099c0e77.jpg)"></div>
+          <div class="card__content">
+            <p class="card__category">Powder </p>
+            <h3 class="card__heading">Lakme beauty Concelar</h3>
+            <div class="confirmation-dialog">
+            
+    
+            <button class="add-to-cart-button">Add to Cart</button>
+                      <!-- <button id="proceed-button">Proceed</button> -->
+            </div>
+          </div>
+        </a>
+        <a class="card" href="#">
+          <div class="card__background" style="background-image: url(https://i.pinimg.com/736x/99/cd/4a/99cd4aca7dd3e1c597a2c3654e9d2962.jpg)"></div>
+          <div class="card__content">
+            <p class="card__category">Lipsticks</p>
+            <h3 class="card__heading">Hour Glass Highlighters</h3>
+            <div class="confirmation-dialog">
+              
+    
+            <button class="add-to-cart-button">Add to Cart</button>
+                      <!-- <button id="proceed-button">Proceed</button> -->
+            </div>
+          </div>
+        </a>
+        <a class="card" href="#">
+          <div class="card__background" style="background-image: url(https://i.pinimg.com/564x/dc/69/be/dc69be959562cf9f7bd3344fcff96f52.jpg)"></div>
+          <div class="card__content">
+            <p class="card__category">Serum</p>
+            <h3 class="card__heading">LAKMÉ 9 To 5 Vitamin C+ Face Serum </h3>
+           
+    
+            <button class="add-to-cart-button">Add to Cart</button>
+                      <!-- <button id="proceed-button">Proceed</button> -->
+          
+          </div>
+        </a>
+    <div>
+  
+      <div class="confirmation-dialog">
+        </div>
+        
+  </section>
+  <!-- Code injected by live-server -->
+  <script>
+      //\\ <![CDATA[  <-- For SVG support
+      if ('WebSocket' in window) {
+          (function () {
+              function refreshCSS() {
+                  var sheets = [].slice.call(document.getElementsByTagName("link"));
+                  var head = document.getElementsByTagName("head")[0];
+                  for (var i = 0; i < sheets.length; ++i) {
+                      var elem = sheets[i];
+                      var parent = elem.parentElement || head;
+                      parent.removeChild(elem);
+                      var rel = elem.rel;
+                      if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                          var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                          elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                      }
+                      parent.appendChild(elem);
+                  }
+              }
+              var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+              var address = protocol + window.location.host + window.location.pathname + '/ws';
+              var socket = new WebSocket(address);
+              socket.onmessage = function (msg) {
+                  if (msg.data == 'reload') window.location.reload();
+                  else if (msg.data == 'refreshcss') refreshCSS();
+              };
+              if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                  console.log('Live reload enabled.');
+                  sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+              }
+          })();
+      }
+      else {
+          console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+      }
+  
+    // Get all the "Add to Cart" buttons
+  const addToCartButtons = document.querySelectorAll('.add-to-cart-button'); 
+  
+  // Add a click event listener to each button
+  addToCartButtons.forEach(button => {
+  
+    button.addEventListener('click', () => {
+  
+      // Show the alert message
+      alert('Item added to cart successfully!');
+  
+    });
+  
+  });
+  function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode'); // Toggle the dark mode class
+        }
+
+        // Get the toggle mode button element
+        const toggleButton = document.getElementById('themeToggle');
+
+        // Add a click event listener to the button
+        toggleButton.addEventListener('change', toggleDarkMode);
+  </script>
+          
+                
+                   
+             
+  
+</body>
+</html>

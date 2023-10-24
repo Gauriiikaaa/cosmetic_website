@@ -235,7 +235,43 @@ body{
   transform-origin: bottom right;
   overflow: hidden;
 }
+.products {
+  display: flex;
+}
 
+.products {
+  padding: 1rem;
+  flex: 1;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cart {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+
+.count {
+  background: black;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+/* Button styles */
+
+.add-to-cart {
+  background: #2a6973;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer; 
+}
+
+.add-to-cart:hover {
+  background: #1d494e;
+}
     </style>
 </head>
 <body>
@@ -280,6 +316,7 @@ body{
           <p>
               Discover exquisite makeup products that redefine beauty.
           </p>
+          
       </div>
       
       <div class="box">
@@ -338,7 +375,7 @@ body{
         <p class="card__category">Luxury</p>
         <h3 class="card__heading">Buy the best </h3>
         <h3 class="card__heading">$50 </h3>
-        
+        <button class="add-to-cart">Add to Cart</button>
       </div>
     </a>
     <a class="card" href="#">
@@ -346,13 +383,16 @@ body{
       <div class="card__content">
         <p class="card__category">Luxury</p>
         <h3 class="card__heading">Dior at discounted price </h3>
+        <button class="add-to-cart">Add to Cart</button>
       </div>
+      
     </a>
     <a class="card" href="#">
       <div class="card__background" style="background-image: url(https://i.pinimg.com/736x/ba/a8/40/baa840224a31b88e8e79453e10d6089f.jpg)"></div>
       <div class="card__content">
         <p class="card__category">Luxury</p>
         <h3 class="card__heading">Peach Soft blush <br> $20</h3>
+        <button class="add-to-cart">Add to Cart</button>
       </div>
     </li>
     <a class="card" href="#">
@@ -360,6 +400,7 @@ body{
       <div class="card__content">
         <p class="card__category">Luxury</p>
         <h3 class="card__heading">Fenty beauty</h3>
+        <button class="add-to-cart">Add to Cart</button>
       </div>
     </a>
     <a class="card" href="#">
@@ -367,6 +408,7 @@ body{
         <div class="card__content">
           <p class="card__category">Luxury</p>
           <h3 class="card__heading">Matte Lips </h3>
+          <button class="add-to-cart">Add to Cart</button>
         </div>
       </a>
       <a class="card" href="#">
@@ -374,6 +416,7 @@ body{
         <div class="card__content">
           <p class="card__category">Luxury </p>
           <h3 class="card__heading">Fenty beauty Concelar</h3>
+          <button class="add-to-cart">Add to Cart</button>
         </div>
       </a>
       <a class="card" href="#">
@@ -381,6 +424,7 @@ body{
         <div class="card__content">
           <p class="card__category">Luxury</p>
           <h3 class="card__heading">Hour Glass Highlighters</h3>
+          <button class="add-to-cart">Add to Cart</button>
         </div>
       </a>
       <a class="card" href="#">
@@ -388,49 +432,15 @@ body{
         <div class="card__content">
           <p class="card__category">Luxury</p>
           <h3 class="card__heading">BestLips</h3>
+          <button class="add-to-cart">Add to Cart</button>
         </div>
       </a>
   <div>
 </section>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
+
 </script>
 </body>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
       <script src="script.js"></script>
+
 </html>
